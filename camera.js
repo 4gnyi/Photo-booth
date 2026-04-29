@@ -58,14 +58,9 @@ const capturePhoto = () => {
 const finalizePhotoStrip = () => {
   const { video, ctx, canvas } = elements;
   video.style.display = 'none';
-  const frame = new Image();
-  frame.src = 'Assets/fish-photobooth/camerapage/frame.png';
-  frame.onload = () => {
-    ctx.drawImage(frame, 0, 0, WIDTH, HEIGHT);
-    localStorage.setItem('photoStrip', canvas.toDataURL('image/png'));
-    setTimeout(() => window.location.href = 'final.html', 50);
-  };
-  frame.complete && frame.onload();
+  const dataURL = canvas.toDataURL('image/png');
+  localStorage.setItem('photoStrip', dataURL);
+  setTimeout(() => window.location.href = 'final.html', 50);
 };
 
 const setupCamera = () => {
