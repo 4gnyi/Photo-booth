@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
+  background-color: #fdfcb8;
   color: #1a2e42;
   min-height: 100vh;
 }
@@ -14,11 +14,11 @@ body {
 /* Logo */
 .logo {
   text-align: center;
-  padding: 1rem;
+  padding: 0.3rem;
 }
 
 .logo img {
-  height: 200px;
+  height: 300px;
   object-fit: contain;
 }
 
@@ -40,9 +40,9 @@ body {
 .photobooth-mock {
   width: 400px;
   height: 500px;
-  border: 0.5px solid #b5d4f4;
+  border: 0.5px solid #000000;
   border-radius: 12px;
-  background-image: url('photobooth-cover.png');
+  background-image: url(photobooth-cover.png);
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
@@ -52,6 +52,7 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
 #select-button {
@@ -82,6 +83,16 @@ body {
   overflow: hidden;
 }
 
+#booth #finalCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+}
+
 #liveVideo {
   position: absolute;
   width: 100%;
@@ -89,6 +100,7 @@ body {
   object-fit: cover;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .countdown-timer {
@@ -127,13 +139,14 @@ body {
   background-color: #ff3fd2;
 }
 
+/* ── Final page ── */
 #canvasContainer {
   display: flex;
   justify-content: center;
   margin: 1rem auto;
 }
 
-#finalCanvas {
+#canvasContainer #finalCanvas {
   width: 300px;
   height: auto;
   border-radius: 12px;
